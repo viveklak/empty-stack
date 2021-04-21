@@ -1,12 +1,8 @@
 import * as pulumi from "@pulumi/pulumi";
 
 const cfg = new pulumi.Config();
-const password = cfg.getSecret("dbPassword");
+const password = cfg.requireSecret("dbPassword");
 console.log("Empty stack!");
 
-var p = undefined;
-if (password != undefined) {
-    p = pulumi.unsecret(password);
-}
-
-export const dbPassword = p;
+export const dbPassword = pulumi.unsecret(password);
+export const moreSecret = cfg.requireSecret("moreSecret");
