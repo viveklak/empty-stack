@@ -4,7 +4,9 @@ const cfg = new pulumi.Config();
 const password = cfg.getSecret("dbPassword");
 console.log("Empty stack!");
 
-
+var p = undefined;
 if (password != undefined) {
-    pulumi.unsecret(password).apply(p => console.log(`Password is ${p}`));
+    p = pulumi.unsecret(password);
 }
+
+export const dbPassword = p;
