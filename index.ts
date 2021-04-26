@@ -6,3 +6,4 @@ console.log("Empty stack!");
 
 export const dbPassword = pulumi.unsecret(password);
 export const moreSecret = cfg.requireSecret("moreSecret");
+export const blah = cfg.getSecret("blah");
