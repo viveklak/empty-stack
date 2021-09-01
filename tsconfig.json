@@ -2,8 +2,8 @@
     "compilerOptions": {
         "strict": true,
         "outDir": "bin",
-        "target": "es2017",
-        "module": "esnext",
+        "target": "ES2017",
+        "module": "ESNext",
         "moduleResolution": "node",
         "sourceMap": true,
         "experimentalDecorators": true,
